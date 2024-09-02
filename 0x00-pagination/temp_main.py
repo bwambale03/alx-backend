@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""                                      Main file                                """
-from 3 - hypermedia_del_pagination import Server  # Fixed import statement
+"""Main file"""
+from 3_hypermedia_del_pagination import Server
 
 server = Server()
-server.dataset()  # Changed from indexed_dataset to dataset
+server.dataset()
 
 try:
     server.get_hyper_index(300000, 100)
@@ -13,7 +13,7 @@ except AssertionError:
 index = 3
 page_size = 2
 
-print("Nb items: {}".format(len(server._Server__dataset)))  # Changed from __indexed_dataset to __dataset
+print("Nb items: {}".format(len(server._Server__dataset)))
 
 # 1- request first index
 res = server.get_hyper_index(index, page_size)
@@ -31,3 +31,4 @@ print(server.get_hyper_index(index, page_size))
 
 # 5- request again initial next index -> same data page as the request 2-
 print(server.get_hyper_index(res.get('next_index'), page_size))
+
