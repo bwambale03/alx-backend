@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """                                      Main file                                """
-from 3-hypermedia_del_pagination import Server  # Fixed import statement
+from 3 - hypermedia_del_pagination import Server  # Fixed import statement
 
 server = Server()
 server.dataset()  # Changed from indexed_dataset to dataset
@@ -31,4 +31,3 @@ print(server.get_hyper_index(index, page_size))
 
 # 5- request again initial next index -> same data page as the request 2-
 print(server.get_hyper_index(res.get('next_index'), page_size))
-
